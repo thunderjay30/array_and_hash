@@ -1,1 +1,9 @@
 ScriptEd array and hash lesson
+
+Instructions:
+Create a list of topics and descriptions (refer to the todo-list.html in solutions folder if you are unsure what to do)
+
+Hints:
+1) Use arrays to store the topics
+2) Use hashtable to store the description of the topic
+3) Use for loop and <ol>, <li> tags to create a list of topics and sublist of description for that topic 
