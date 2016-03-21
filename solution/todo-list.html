@@ -1,0 +1,43 @@
+<html>
+	<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript">
+		var topic_arr = [];
+		var description_dict = {};
+		function addTask(topic, description) {
+			topic_arr.push(topic);
+			description_dict[topic] = description
+		}
+		
+		addTask("Study for math", ["Chapter 1 and 2", "Study last year\'s Regents"]);
+		addTask("Study for phsyics", ["Newton's laws", "Magnetics"]);
+		addTask("Study for history", ["World War I"]);
+		addTask("Study for english", ["Read \"The Giver\" by Lois Lowry", "Read \"A Rose for Emily\" by William Faulkner"]);
+			
+		$(document).ready(function() {
+			var ul_body = $("<ul>");
+			ul_body.appendTo('body');
+
+			for(var i = 0; i < topic_arr.length; i++) {
+				var topic = topic_arr[i]
+				var li = $("<li>", 
+					{
+						text: topic
+					});
+				li.appendTo(ul_body);
+
+				var d = description_dict[topic];
+				var ul = $("<ul>");
+				ul.appendTo(li);
+				for(var j = 0; j < d.length; j++) {
+					li = $("<li>", 
+					{
+						text: d[j]
+					});
+					li.appendTo(ul);
+				}
+			}
+		});
+	</script>
+	<body>
+	</body>
+</html>
